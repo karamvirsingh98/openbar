@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
   // previous editor
   let prev = vscode.commands.registerCommand("openbar.prev", () => {
-    vscode.commands.executeCommand("workbench.action.nextEditor");
+    vscode.commands.executeCommand("workbench.action.previousEditor");
   });
 
   // next editor
