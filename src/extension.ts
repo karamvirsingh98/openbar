@@ -23,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // open terminal
   let terminal = vscode.commands.registerCommand("openbar.terminal", () => {
-    vscode.commands.executeCommand("editor.action.togglePanel");
+    vscode.commands.executeCommand("workbench.action.togglePanel");
   });
 
   // add functions to extension
