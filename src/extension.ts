@@ -1,27 +1,31 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "openbar" is now active!');
-
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  let next = vscode.commands.registerCommand("openbar.next", () => {
-    vscode.commands.executeCommand("workbench.action.nextEditor");
-  });
+  // previous editor
   let prev = vscode.commands.registerCommand("openbar.prev", () => {
     vscode.commands.executeCommand("workbench.action.nextEditor");
   });
 
-  context.subscriptions.push(next);
+  // next editor
+  let next = vscode.commands.registerCommand("openbar.next", () => {
+    vscode.commands.executeCommand("workbench.action.nextEditor");
+  });
+
+  // open command palette
+  let palette = vscode.commands.registerCommand("openbar.palette", () => {
+    vscode.commands.executeCommand("workbench.action.showCommands");
+  });
+
+  // format document
+  let format = vscode.commands.registerCommand("openbar.format", () => {
+    vscode.commands.executeCommand("editor.action.formatDocument");
+  });
+
+  // add functions to extension
   context.subscriptions.push(prev);
+  context.subscriptions.push(next);
+  context.subscriptions.push(palette);
+  context.subscriptions.push(format);
 }
 
-// this method is called when your extension is deactivated
 export function deactivate() {}

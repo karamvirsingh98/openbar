@@ -10,29 +10,47 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:openbar.prev",
     "onCommand:openbar.next",
-    "onCommand:openbar.prev"
+    "onCommand:openbar.palette",
+    "onCommand:openbar.format"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "openbar.next",
-        "title": "Next"
+        "command": "openbar.prev",
+        "title": "⇤"
       },
       {
-        "command": "openbar.prev",
-        "title": "Prev"
+        "command": "openbar.next",
+        "title": "⇥"
+      },
+      {
+        "command": "openbar.palette",
+        "title": "👾"
+      },
+      {
+        "command": "openbar.format",
+        "title": "🧹"
       }
     ],
     "menus": {
       "touchBar": [
         {
+          "command": "openbar.prev",
+          "group": "editing"
+        },
+        {
           "command": "openbar.next",
           "group": "editing"
         },
         {
-          "command": "openbar.prev",
+          "command": "openbar.palette",
+          "group": "editing"
+        },
+        {
+          "command": "openbar.format",
           "group": "editing"
         }
       ]
