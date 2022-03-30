@@ -13,7 +13,8 @@
     "onCommand:openbar.prev",
     "onCommand:openbar.next",
     "onCommand:openbar.palette",
-    "onCommand:openbar.format"
+    "onCommand:openbar.format",
+    "onCommand:openbar.terminal"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -33,6 +34,10 @@
       {
         "command": "openbar.format",
         "title": "🧹"
+      },
+      {
+        "command": "openbar.terminal",
+        "title": "💡"
       }
     ],
     "menus": {
@@ -51,6 +56,10 @@
         },
         {
           "command": "openbar.format",
+          "group": "editing"
+        },
+        {
+          "command": "openbar.terminal",
           "group": "editing"
         }
       ]

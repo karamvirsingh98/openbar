@@ -21,11 +21,17 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.commands.executeCommand("editor.action.formatDocument");
   });
 
+  // open terminal
+  let terminal = vscode.commands.registerCommand("openbar.terminal", () => {
+    vscode.commands.executeCommand("editor.action.togglePanel");
+  });
+
   // add functions to extension
   context.subscriptions.push(prev);
   context.subscriptions.push(next);
   context.subscriptions.push(palette);
   context.subscriptions.push(format);
+  context.subscriptions.push(terminal);
 }
 
 export function deactivate() {}
